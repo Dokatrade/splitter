@@ -18,6 +18,11 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 import xml.etree.ElementTree as ET
 
+# Default EPUB file to process (full path)
+DEFAULT_EPUB_FILE = Path(r"d:\results\Sketch Your Mind\Sketch Your Mind.epub")
+# Default directory for output TXT files
+DEFAULT_OUTPUT_DIR = Path(r"d:\results\Sketch Your Mind")
+
 
 class SimpleHTMLTextExtractor(HTMLParser):
     """Lightweight HTML-to-text converter suitable for well-formed XHTML."""
@@ -250,7 +255,12 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Convert an EPUB ebook into plain UTF-8 text."
     )
-    parser.add_argument("epub", help="Path to the source .epub file.")
+    parser.add_argument(
+        "epub",
+        nargs="?",
+        default=None,
+        help=f"Path to the source .epub file. Defaults to: {DEFAULT_EPUB_FILE}",
+    )
     parser.add_argument(
         "-o",
         "--output",
@@ -261,8 +271,21 @@ def parse_args(argv: Optional[Iterable[str]] = None) -> argparse.Namespace:
 
 def main(argv: Optional[Iterable[str]] = None) -> None:
     args = parse_args(argv)
-    epub_path = Path(args.epub)
-    destination = Path(args.output).expanduser() if args.output else None
+    
+    # Use default epub file if not provided
+    if args.epub:
+        epub_path = Path(args.epub)
+    else:
+        epub_path = DEFAULT_EPUB_FILE
+    
+    if args.output:
+        destination = Path(args.output)
+        # Use default directory for output if path is not absolute
+        if not destination.is_absolute():
+            destination = DEFAULT_OUTPUT_DIR / destination
+    else:
+        # Default: save txt file in DEFAULT_OUTPUT_DIR with same name as epub
+        destination = DEFAULT_OUTPUT_DIR / epub_path.with_suffix(".txt").name
 
     try:
         output_path = convert_epub_to_txt(epub_path, destination)
