@@ -241,10 +241,15 @@ FONT_VARIANTS = {
     'Outfit Light':    {'r': 'Outfit-Light.ttf',             'b': 'Outfit-Medium.ttf',              'i': 'Outfit-Light.ttf',                'bi': 'Outfit-Medium.ttf'},
     # ── Bebas Neue (single weight, no italic) ──
     'Bebas Neue':      {'r': 'BebasNeue-Regular.ttf',        'b': 'BebasNeue-Regular.ttf',          'i': 'BebasNeue-Regular.ttf',           'bi': 'BebasNeue-Regular.ttf'},
+    # ── Roboto Condensed ──
+    'Roboto Cond':         {'r': 'RobotoCondensed-Regular.ttf',  'b': 'RobotoCondensed-Bold.ttf',       'i': 'RobotoCondensed-Italic.ttf',      'bi': 'RobotoCondensed-BoldItalic.ttf'},
+    'Roboto Cond Medium':  {'r': 'RobotoCondensed-Medium.ttf',   'b': 'RobotoCondensed-SemiBold.ttf',   'i': 'RobotoCondensed-MediumItalic.ttf','bi': 'RobotoCondensed-SemiBoldItalic.ttf'},
+    'Roboto Cond Light':   {'r': 'RobotoCondensed-Light.ttf',    'b': 'RobotoCondensed-Medium.ttf',     'i': 'RobotoCondensed-LightItalic.ttf', 'bi': 'RobotoCondensed-MediumItalic.ttf'},
     # ── Barlow Condensed ──
     'Barlow Cond':         {'r': 'BarlowCondensed-Regular.ttf',  'b': 'BarlowCondensed-Bold.ttf',       'i': 'BarlowCondensed-Italic.ttf',      'bi': 'BarlowCondensed-BoldItalic.ttf'},
     'Barlow Cond Medium':  {'r': 'BarlowCondensed-Medium.ttf',   'b': 'BarlowCondensed-SemiBold.ttf',   'i': 'BarlowCondensed-MediumItalic.ttf','bi': 'BarlowCondensed-SemiBoldItalic.ttf'},
     'Barlow Cond Light':   {'r': 'BarlowCondensed-Light.ttf',    'b': 'BarlowCondensed-Medium.ttf',     'i': 'BarlowCondensed-LightItalic.ttf', 'bi': 'BarlowCondensed-MediumItalic.ttf'},
+    'Barlow Cond Medium Cyr': {'r': 'BarlowCondensed-Medium.otf','b': 'BarlowCondensed-Medium.otf',     'i': 'BarlowCondensed-Medium.otf',      'bi': 'BarlowCondensed-Medium.otf'},
     # ── Classic Windows fonts ──
     'Arial':           {'r': 'arial.ttf',    'b': 'arialbd.ttf',  'i': 'ariali.ttf',   'bi': 'arialbi.ttf'},
     'Times New Roman': {'r': 'times.ttf',    'b': 'timesbd.ttf',  'i': 'timesi.ttf',   'bi': 'timesbi.ttf'},
